@@ -9,7 +9,7 @@
   top: 0px;
   left: 0px;
   background-color: black;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .text-s1 {
     color: white;
@@ -23,7 +23,7 @@
 }
 
 #welcome-header {
-  padding: 35vh 20px;
+  padding: 30vh 20px;
   height: 100vh;
 }
 #header-text {
@@ -34,13 +34,22 @@
     text-align: center;
     text-shadow: 2px 4px 7px black;
 }
+#header-text:hover {
+  font-size: 60px;
+  color: #fbfbfb;
+}
+
 #header-img {
   display: block;
   margin: auto;
   width: 175px;
-  height: 175px;
   border: 1px solid grey;
   background-color: lightgrey;
   border-radius: 3px;
-  padding: 5px;
+  padding: 7px;
+}
+#header-img:hover {
+  width: 200px;
+  background-color: white;
+  padding: 3px;
 }
