@@ -21,6 +21,11 @@
     margin-bottom: 20px;
     text-align: center;
 }
+.ht {
+  text-align: center;
+  font-weight: bold;
+  font-size: 48px;
+}
 
 #welcome-header {
   padding: 30vh 20px;
