@@ -57,6 +57,12 @@ $(document).ready(function(){
 
   });
 
+  $('#bta').click(function(){
+    $('html, body').animate({
+      scrollTop: 0 // $("#sdl").offset().top
+    }, 1725);
+  });
+
 });
 
 // Main Angular Application

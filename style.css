@@ -184,7 +184,7 @@ body {
 }
 #top-bar-inner-2 {
   position: relative;
-  width: 875px;
+  width: 975px;
   max-width: 100%;
   z-index: 1000;
   display: block;
@@ -223,4 +223,18 @@ body {
   -o-transition: transition 0.3s;
   -ms-transition: transition 0.3s;
   transition: 0.3s;
+}
+#bta {
+  position: fixed;;
+  color: white;
+  right: 0px;
+  top: 0px;
+  font-size: 28px;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+#bta:hover {
+  color: lightgrey;
 }
