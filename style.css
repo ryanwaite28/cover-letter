@@ -1,5 +1,5 @@
-body {
-  overflow-x:  hidden;
+html, body {
+  overflow-x: hidden;
 }
 
 hr {
@@ -10,6 +10,9 @@ hr {
   Classes
 */
 
+.text-bold {
+  font-weight: bold;
+}
 .row {
   position: relative;
 }
@@ -19,7 +22,7 @@ hr {
     background: transparent;
 }
 .parallax-bar {
-  height: 85vh;
+  height: 92vh;
   padding: 35vh 10px;
 }
 .dim-1 {
@@ -38,7 +41,7 @@ hr {
   top: 0px;
   left: 0px;
   background-color: black;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 .reg-1 {
   opacity: 0.0;
@@ -91,7 +94,9 @@ hr {
   font-size: 35px;
   text-align: center;
 }
-
+.brd-1 {
+  border: 1px solid black;
+}
 .cert {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
   border: 2px solid black;
@@ -101,18 +106,47 @@ hr {
   display: block;
   margin: auto;
   margin-bottom: 25px;
+  padding: 3px;
+  background: grey;
 }
 .c-white {
   color: white;
 }
 .bta {
   cursor: pointer;
+  color: white;
+}
+.app-icon {
+  width: 80px;
+  max-width: 95%;
+  height: 80px;
+  display: block;
+  margin: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  border: 2px solid black;
+  border-radius: 2px;
+  padding: 2px;
+  background: lightgrey;
+}
+
+.app-div {
+  border: 1px solid lightgrey;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  margin-bottom: 25px;
+  min-height: 300px;
+  height: 375px;
+  border-radius: 1px;
 }
 
 /*
   IDs
 */
 
+#tb-name {
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+}
 #sk-bar > div, #ct-bar > div {
   padding: 15px;
   -webkit-transition: transition 0.3s;
@@ -179,6 +213,9 @@ hr {
 #bar-7 {
   background-color: #e6e6e6;
 }
+#bar-8 {
+  background-color: #fbfbfb;
+}
 
 #top-bar {
   position: fixed;
@@ -192,6 +229,7 @@ hr {
 }
 #top-bar-inner-1 {
   position: relative;
+  width: 100%;
 }
 #top-bar-inner-2 {
   position: relative;
@@ -224,20 +262,30 @@ hr {
   -o-transition: transition 0.3s;
   -ms-transition: transition 0.3s;
   transition: 0.3s;
-  padding: 10px 15px;
+  padding: 10px 20px;
 }
 #top-links li a {
   color: white;
-  font-size: 18px;
+  font-size: 14px;
+  text-decoration: none;
   -webkit-transition: transition 0.3s;
   -moz-transition: transition 0.3s;
   -o-transition: transition 0.3s;
   -ms-transition: transition 0.3s;
   transition: 0.3s;
 }
+#top-links li:hover {
+  background-color: white;
+}
+#top-links li:hover a {
+  color: black;
+}
+#top-links li a:hover {
+  color: #1a1a1a;
+}
+
 #bta {
-  position: fixed;;
-  color: white;
+  position: fixed;
   right: 0px;
   top: 0px;
   font-size: 28px;
@@ -251,6 +299,21 @@ hr {
 #bta:hover, #bta-2:hover {
   color: lightgrey;
 }
+#menu-icon {
+  position: fixed;
+  cursor: pointer;
+  color: white;
+  left: 0px;
+  top: 0px;
+  font-size: 28px;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+}
+#menu-icon:hover {
+  color: lightgrey;
+}
+
 #footer {
   width: 100%;
   background-color: black;
@@ -266,9 +329,9 @@ hr {
 /* --- */
 
 @media (max-width: 750px) {
-  #top-bar {
+  /*#top-bar {
     display: none;
-  }
+  }*/
   #header-text {
     font-size: 32px;
     margin: 0px;
@@ -297,5 +360,8 @@ hr {
   }
   .img-s1 {
     width: 200px;
+  }
+  .ht {
+    font-size: 36px;
   }
 }
