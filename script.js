@@ -37,12 +37,14 @@ $(document).ready(function(){
   //
 
   var reg = $('#top-bar');
+  var height = $(window).height();
+  var point = height / 3;
+
   $(window).scroll(function(){
 
-    var height = $(window).height();
-    var top = $(window).scrollTop();;
+    var top = $(window).scrollTop();
 
-    if( top > height / 2 ) {
+    if( top > point ) {
       reg.removeClass('reg-1');
     }
     else {
