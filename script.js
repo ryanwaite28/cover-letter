@@ -1,8 +1,12 @@
 // Scroll Reveal
 $(document).ready(function(){
 
+  window.ck_name = /^[A-Za-z0-9 ]{3,20}$/
+	window.ck_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+	window.ck_username = /^[A-Za-z0-9-_]{1,20}$/
+
   var bioPic = {
-    origin   : "top",
+    origin   : "bottom",
     distance : "32px",
     duration : 500,
     delay    : 500,
@@ -10,7 +14,7 @@ $(document).ready(function(){
   };
 
   var textContainer = {
-    origin   : "top",
+    origin   : "bottom",
     distance : "32px",
     duration : 1000,
     delay    : 1000,
@@ -26,7 +30,7 @@ $(document).ready(function(){
   };
 
   window.sr = ScrollReveal({ duration: 500 });
-  sr.reveal('.header-img', bioPic);
+  sr.reveal('#header-img-c', bioPic);
   sr.reveal('#head-text-c', textContainer);
   sr.reveal('.rev-1', revONE);
 
@@ -57,11 +61,73 @@ $(document).ready(function(){
 
   });
 
-  $('#bta').click(function(){
+  $('.bta').click(function(){
     $('html, body').animate({
       scrollTop: 0 // $("#sdl").offset().top
     }, 1725);
   });
+
+  //
+
+  $('#send-form-btn').click(function(){
+
+			var name = $('#f-name').val();
+			var email = $('#f-email').val();
+			var subject = $('#f-subject').val();
+			var message = $('#f-message').val();
+
+			if(name == '') {
+				alert('Name Field Is Required.');
+				return;
+			}
+			if(email == '') {
+				alert('Email Field Is Required.');
+				return;
+			}
+			if(!ck_email.test(email)) {
+				alert('Bad Email Input.');
+				return;
+			}
+			if(subject == '' || subject.length <= 3) {
+				alert('Subject Is Required And Should Be Descriptive.');
+				return;
+			}
+			if(message == '' || message.length <= 10) {
+				alert('Message Field Is Required And Should Be Descriptive.');
+				return;
+			}
+
+			var obj = {
+				name: name,
+				email: email,
+				subject: subject,
+				message: message
+			}
+
+			$('#form').hide();
+			$('#loading-gif').show();
+
+			var jsonSTR = JSON.stringify(obj);
+
+			$.ajax({
+				url: 'http://ryanwaite.tk/sendemail.php?j=' + jsonSTR,
+				type: 'POST',
+				contentType: 'application/json',
+				//data: JSON.stringify(obj),
+				success: function(data) {
+					console.log(data);
+					$('#f-name').val('');
+					$('#f-email').val('');
+					$('#f-subject').val('');
+					$('#f-message').val('');
+					$('#form').show();
+					$('#loading-gif').hide();
+					$('#msg').text('Message Sent!');
+					setTimeout(function(){ $('#msg').text(''); } , 5000)
+				}
+			})
+
+		});
 
 });
 
