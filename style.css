@@ -235,7 +235,7 @@ hr {
   position: relative;
   width: 975px;
   max-width: 100%;
-  z-index: 1000;
+  /*z-index: 1000;*/
   display: block;
   margin: auto;
   -webkit-transition: transition 0.3s;
@@ -284,7 +284,12 @@ hr {
   color: #1a1a1a;
 }
 
+.sbm-1 {
+  margin-bottom: 30px;
+}
+
 #bta {
+  z-index: 100;
   position: fixed;
   right: 0px;
   top: 0px;
@@ -300,6 +305,7 @@ hr {
   color: lightgrey;
 }
 #menu-icon {
+  z-index: 100;
   position: fixed;
   cursor: pointer;
   color: white;
