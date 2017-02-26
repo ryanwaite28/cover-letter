@@ -5,6 +5,15 @@ $(document).ready(function(){
 	window.ck_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
 	window.ck_username = /^[A-Za-z0-9-_]{1,20}$/
 
+  $('#menu-icon').click(function(){
+    if( $('#menu-icon').hasClass('fa-bars') ) {
+      $(this).removeClass('fa-bars').addClass('fa-times');
+    }
+    else {
+      $(this).removeClass('fa-times').addClass('fa-bars');
+    }
+  });
+
   var bioPic = {
     origin   : "bottom",
     distance : "32px",
